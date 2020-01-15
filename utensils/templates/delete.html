@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+{% endblock head %}
+
+{% block title %}
+<h1>Delete - {{utensils.title}}</h1>
+{% endblock title %}
+
+{% block body %}
+<form method="post">{% csrf_token %}
+    <a href ={% url 'home' %}>
+    <input type="submit" value="Confirm" />
+</form>
+    <p><a href ={% url 'home' %}>keep browsing</a></p>
+{% endblock body %}

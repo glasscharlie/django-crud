@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+    <link rel = "stylesheet" href = "{% static 'detail.css' %}">
+{% endblock head %}
+
+{% block title %}
+    {{utensils.title}}
+{% endblock title%} 
+
+{% block body %}
+<div>
+    <p>{{utensils.description}}</p>
+    </div>
+    <img src={{utensils.img}}>
+    <p><a href= {% url 'update' utensils.id %}>update</a></p>
+    <p><a href= {% url 'delete' utensils.id %}>delete</a></p>
+    <p><a href ={% url 'home' %}>keep browsing</a></p>
+</body>
+{% endblock body %}

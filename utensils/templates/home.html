@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+    <link rel = "stylesheet" href = "{% static 'home.css' %}">
+{% endblock head %}
+
+{% block title %}
+    What's in the kitchen:
+{% endblock title%} 
+
+{% block body %}
+{% for utensils in utensils %}
+    <div>
+    <p> <a href= {% url 'detail' utensils.id %}>{{utensils.title}}</a> </p>
+    </div>
+{% endfor %}
+<div>
+    <a href ={% url 'utensils_new' %}>add a utensil</a>
+</div>
+{% endblock body %}
